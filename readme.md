@@ -13,7 +13,8 @@ C-Up		horizontal increase window
 C-Down		horizontal decrease window
 C-Left		vertical decrease window
 C-Right		vertical increase window
-<leader>h	toggle highlightsearch
+<Leader>h	toggle highlightsearch
+<Leader>el	toggle explorer on left side
 
 ## visual mode
 
@@ -22,29 +23,29 @@ C-Right		vertical increase window
 
 ## git
 
-<leader>ga	open blame window
+<Leader>ga	open blame window
 q			close blame window
 <CR> 		open bleme commit
-<leader>go	open file/folder in git repository
-<leader>gd	opens a new diff that compares against the current index	
-<leader>gD	close git diff
-<leader>gr	revert to the specific commit
-<leader>gR	revert the current file to the specific commit
+<Leader>go	open file/folder in git repository
+<Leader>gd	opens a new diff that compares against the current index	
+<Leader>gD	close git diff
+<Leader>gr	revert to the specific commit
+<Leader>gR	revert the current file to the specific commit
 
 ## telescope
 
-<leader>ff	find files
-<leader>fg	live grep
-<leader>fh	help tags
-<leader>gf	git files
-<leader>gb	git branches
-<leader>gc	git commits
-<leader>gs	git status
+<Leader>ff	find files
+<Leader>fg	live grep
+<Leader>fh	help tags
+<Leader>gf	git files
+<Leader>gb	git branches
+<Leader>gc	git commits
+<Leader>gs	git status
 
-<leader>lr	lsp references
-<leader>ls	lsp symbols
-<leader>ld	lsp definitions
-<leader>le	lsp diagnostics
+<Leader>lr	lsp references
+<Leader>ls	lsp symbols
+<Leader>ld	lsp definitions
+<Leader>le	lsp diagnostics
 
 ## Completion
 

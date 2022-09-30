@@ -46,3 +46,5 @@ keymap("v", ">", ">gv", opts)
 -- toggle highlightsearch
 keymap('n', '<Leader>h', ':set hls!<cr>', opts)
 
+-- nvim-tree
+keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', opts)

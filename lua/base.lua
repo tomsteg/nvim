@@ -2,7 +2,7 @@ vim.opt.backspace = { 'start', 'eol', 'indent' } -- specifies what <BS>, CTRL-W,
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 vim.opt.cmdheight = 1 -- number of lines used for the command-line
-vim.opt.hlsearch = true -- highlight searchresults
+vim.opt.hlsearch = true -- highlight search results
 vim.opt.ignorecase = true -- case insensitive searching
 vim.opt.inccommand = 'split'
 vim.opt.iskeyword = { '$', '@', '48-57', '_' , '192-255' }
@@ -24,3 +24,6 @@ vim.opt.autoindent = true -- automatically set the indent of a new line
 vim.opt.smartindent = true -- do clever autoindenting
 vim.opt.expandtab = false -- expand <Tab> to spaces in Insert mode
 
+-- spelling
+vim.opt.spell = true
+vim.opt.spelllang = { 'en', 'de' }

@@ -1,0 +1,32 @@
+let mapleader = " "
+
+""" Plugins
+set surround
+set commentary
+set easymotion
+set ReplaceWithRegister
+set NERDTree
+
+""" Plugin Settings
+let g:NERDTreeMapActivateNode='l'
+let g:NERDTreeMapJumpParent='h'
+
+""" common settings
+set showmode
+set incsearch
+set number relativenumber
+
+""" idea specific settings
+set ideajoin
+set idearefactormode=keep
+
+""" mappings
+nmap <leader>ed <Action>(ShowErrorDescription)
+nmap <leader>en <Action>(GotoNextError)
+nmap <leader>h <Action>(PreviousTab)
+nmap <leader>l <Action>(NextTab)
+nmap <leader>bd <action>(CloseEditor)
+nmap <leader>i <action>(Generate)
+nmap <leader>g <action>(Git.Menu)
+nnoremap <leader><leader> <C-Tab>
+

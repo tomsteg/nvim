@@ -25,5 +25,5 @@ vim.opt.smartindent = true -- do clever autoindenting
 vim.opt.expandtab = false -- expand <Tab> to spaces in Insert mode
 
 -- spelling
-vim.opt.spell = true
-vim.opt.spelllang = { 'en', 'de' }
+-- vim.opt.spell = true
+-- vim.opt.spelllang = { 'en', 'de' }

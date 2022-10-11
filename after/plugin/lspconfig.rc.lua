@@ -2,20 +2,14 @@ local status, nvim_lsp = pcall(require, 'lspconfig')
 if (not status) then return end
 
 nvim_lsp.intelephense.setup {
-	on_attach = on_attach,
 	filetypes = {'php'}
 }
 
-nvim_lsp.tsserver.setup {
-	on_attach = on_attach,
-}
+nvim_lsp.tsserver.setup {}
 
-nvim_lsp.vuels.setup {
-	on_attach = on_attach,
-}
+nvim_lsp.vuels.setup {}
 
 nvim_lsp.sumneko_lua.setup {
-	on_attach = on_attach,
 	settings = {
 		Lua = {
 			diagnostics = {

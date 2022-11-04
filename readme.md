@@ -25,7 +25,7 @@ C-Right		vertical increase window
 
 <Leader>ga	open blame window
 q			close blame window
-<CR> 		open bleme commit
+<CR> 		open blame commit
 <Leader>go	open file/folder in git repository
 <Leader>gd	opens a new diff that compares against the current index	
 <Leader>gD	close git diff
@@ -37,6 +37,7 @@ q			close blame window
 <Leader>ff	find files
 <Leader>fg	live grep
 <Leader>fh	help tags
+<leader>fb  find buffers
 <Leader>gf	git files
 <Leader>gb	git branches
 <Leader>gc	git commits

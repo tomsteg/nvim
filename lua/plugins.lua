@@ -23,5 +23,6 @@ packer.startup(function(use)
 	use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
 	use 'hrsh7th/nvim-cmp' -- completion
 	use 'kyazdani42/nvim-tree.lua'
+	use 'nvim-tree/nvim-web-devicons'
 	use {'akinsho/bufferline.nvim', tag = "v2.*"}
 end)

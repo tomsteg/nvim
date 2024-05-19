@@ -9,7 +9,7 @@ nvim_lsp.tsserver.setup {}
 
 nvim_lsp.vuels.setup {}
 
-nvim_lsp.sumneko_lua.setup {
+nvim_lsp.lua_ls.setup {
 	settings = {
 		Lua = {
 			diagnostics = {

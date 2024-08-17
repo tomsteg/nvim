@@ -15,7 +15,6 @@ packer.startup(function(use)
 	use 'windwp/nvim-autopairs'
 	use 'williamboman/nvim-lsp-installer'
 	use	'neovim/nvim-lspconfig'
-	use 'lewis6991/gitsigns.nvim'
 	use 'dinhhuy258/git.nvim'
 	use 'onsails/lspkind-nvim'
 	use 'L3MON4D3/LuaSnip'
@@ -23,6 +22,6 @@ packer.startup(function(use)
 	use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
 	use 'hrsh7th/nvim-cmp' -- completion
 	use 'kyazdani42/nvim-tree.lua'
-	use 'nvim-tree/nvim-web-devicons'
-	use {'akinsho/bufferline.nvim', tag = "v2.*"}
+	use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+	use "sindrets/diffview.nvim"
 end)

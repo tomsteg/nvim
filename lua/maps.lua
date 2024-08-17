@@ -46,6 +46,3 @@ keymap("v", ">", ">gv", opts)
 -- toggle highlightsearch
 keymap('n', '<Leader>h', ':set hls!<cr>', opts)
 
-vim.keymap.set("n", "<space>tf", function()
-	require("telescope").extensions.file_browser.file_browser()
-end)

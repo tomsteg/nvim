@@ -24,4 +24,5 @@ packer.startup(function(use)
 	use 'kyazdani42/nvim-tree.lua'
 	use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 	use "sindrets/diffview.nvim"
+	use 'tpope/vim-fugitive'
 end)

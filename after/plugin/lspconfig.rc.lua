@@ -2,7 +2,18 @@ local status, nvim_lsp = pcall(require, 'lspconfig')
 if (not status) then return end
 
 nvim_lsp.intelephense.setup {
-	filetypes = {'php'}
+	filetypes = {'php'};
+	settings = {
+		intelephense = {
+			diagnostics = {
+				enable = true,
+			},
+			phpstan = {
+				enabled = true,
+				command = "~/.composer/vendor/bin/phpstan",
+			}
+		}
+	}
 }
 
 nvim_lsp.tsserver.setup {}

@@ -12,6 +12,7 @@ packer.startup(function(use)
 	use 'nvim-lua/plenary.nvim'
 	use 'nvim-telescope/telescope.nvim'
 	use 'nvim-telescope/telescope-file-browser.nvim'
+	use 'nvim-telescope/telescope-fugitive.nvim'
 	use 'windwp/nvim-autopairs'
 	use 'williamboman/nvim-lsp-installer'
 	use	'neovim/nvim-lspconfig'
@@ -22,7 +23,6 @@ packer.startup(function(use)
 	use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
 	use 'hrsh7th/nvim-cmp' -- completion
 	use 'kyazdani42/nvim-tree.lua'
-	use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 	use "sindrets/diffview.nvim"
 	use 'tpope/vim-fugitive'
 end)

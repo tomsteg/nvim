@@ -55,5 +55,20 @@ require('telescope').setup{
 				['<esc>'] = actions.close
 			}
 		}
-	}
+	},
+	  extensions = {
+		file_browser = {
+		  -- theme = "ivy", -- Optional: Du kannst ein Thema wählen
+		  hijack_netrw = true, -- Optional: Verhindert, dass netrw geöffnet wird, wenn du `:Explore` ausführst
+		}
+	  },
 }
+
+-- Lade die Extension
+require('telescope').load_extension('file_browser')
+vim.api.nvim_set_keymap(
+  'n',
+  '<leader>fo',
+  ":Telescope file_browser<CR>",
+  { noremap = true }
+)

@@ -16,7 +16,7 @@ nvim_lsp.intelephense.setup {
 	}
 }
 
-nvim_lsp.tsserver.setup {}
+nvim_lsp.ts_ls.setup {}
 
 nvim_lsp.vuels.setup {}
 

@@ -19,6 +19,9 @@ end)
 vim.keymap.set('n', '<leader>fh', function()
 	builtin.help_tags()
 end)
+vim.keymap.set('n', '<leader>c', function() 
+	builtin.commands()
+end)
 
 -- git keymaps
 vim.keymap.set('n', '<leader>gf', function()

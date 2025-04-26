@@ -18,7 +18,9 @@ nvim_lsp.intelephense.setup {
 
 nvim_lsp.ts_ls.setup {}
 
-nvim_lsp.vuels.setup {}
+nvim_lsp.volar.setup {
+	filetypes = { 'typescript', 'javascript', 'vue' },
+}
 
 nvim_lsp.lua_ls.setup {
 	settings = {

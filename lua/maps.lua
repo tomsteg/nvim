@@ -31,10 +31,8 @@ keymap('n', '<C-k>', '<C-w>k', opts)
 keymap('n', '<C-l>', '<C-w>l', opts)
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-w>+", ":vertical resize +5<CR>", opts)
+keymap("n", "<C-w>-", ":vertical resize -5<CR>", opts)
 
 -- buffers
 keymap('n', '<Leader>bn', ':bn<CR>', opts)
@@ -45,4 +43,17 @@ keymap("v", ">", ">gv", opts)
 
 -- toggle highlightsearch
 keymap('n', '<Leader>h', ':set hls!<cr>', opts)
+
+vim.keymap.set("n", "<leader>ar", function ()
+	local input_file = vim.fn.expand("%")
+	local output_file = input_file:gsub("%.adoc$", ".pdf")
+	local cmd = string.format("asciidoctor-pdf -r asciidoctor-diagram -a pdf-theme=default-with-font-fallback %s", input_file)
+	vim.cmd("!" .. cmd)
+	vim.notify("PDF generiert: " .. output_file, vim.log.levels.INFO)
+end, { desc = "Asciidoctor zu PDF", noremap = true, silent = true})
+
+vim.keymap.set("n", "<leader>ao", function ()
+	local output_file = vim.fn.expand("%:r") .. ".pdf"
+	vim.cmd("!open -a Safari " .. output_file .. " &")
+end, { desc = "PDF mit Safari öffnen", noremap = true, silent = true})
 

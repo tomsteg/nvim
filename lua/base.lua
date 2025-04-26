@@ -25,5 +25,11 @@ vim.opt.smartindent = true -- do clever autoindenting
 vim.opt.expandtab = false -- expand <Tab> to spaces in Insert mode
 
 -- spelling
--- vim.opt.spell = true
--- vim.opt.spelllang = { 'en', 'de' }
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'markdown', 'text', 'gitcommit' }, -- Dateitypen, bei denen Spelling aktiv sein soll
+  callback = function()
+    vim.opt_local.spell = true
+    vim.opt_local.spelllang = { 'en', 'de' }
+  end,
+})
+

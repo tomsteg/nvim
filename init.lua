@@ -1,6 +1,20 @@
-require('base')
 require('maps')
-require('plugins')
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- oder 'main', je nach Stabilitätspräferenz
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+require("lazy").setup("plugins")
+
+require('base')
 
 local has = vim.fn.has
 local is_mac = has "macunix"
@@ -12,3 +26,11 @@ end
 if is_win then
   require('windows')
 end
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "asciidoc",
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+  end,
+})

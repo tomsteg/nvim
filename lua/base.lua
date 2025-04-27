@@ -1,4 +1,5 @@
 vim.opt.backspace = { 'start', 'eol', 'indent' } -- specifies what <BS>, CTRL-W, etc. can do in Insert mode
+vim.opt.conceallevel = 1
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 vim.opt.cmdheight = 1 -- number of lines used for the command-line

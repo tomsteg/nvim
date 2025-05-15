@@ -30,7 +30,7 @@ vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'markdown', 'text', 'gitcommit' }, -- Dateitypen, bei denen Spelling aktiv sein soll
   callback = function()
     vim.opt_local.spell = true
-    vim.opt_local.spelllang = { 'en', 'de' }
+    vim.opt_local.spelllang = { 'de', 'en' }
   end,
 })
 

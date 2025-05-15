@@ -1,13 +1,3 @@
-local keymap = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
-
---Remap space as leader key
-keymap("n", "<Space>", "", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-keymap("n", "<C-Space>", "<cmd>WhichKey \\<leader><cr>", opts)
-keymap("n", "<C-i>", "<C-i>", opts)
-
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -16,33 +6,42 @@ keymap("n", "<C-i>", "<C-i>", opts)
 --   term_mode = "t",
 --   command_mode = "c",
 
-keymap('', '<', '[', opts)
-keymap('', '>', ']', opts)
+local opts = { noremap = true, silent = true }
+
+--Remap space as leader key
+vim.keymap.set("n", "<Space>", "", opts)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+vim.keymap.set("n", "<C-Space>", "<cmd>WhichKey \\<leader><cr>", opts)
+vim.keymap.set("n", "<C-i>", "<C-i>", opts)
+
+vim.keymap.set('', '<', '[', opts)
+vim.keymap.set('', '>', ']', opts)
 
 -- split window
-keymap('n', 'sv', ':vsplit<Return><C-w>w', opts)
-keymap('n', 'sh', ':split<Return><C-w>w', opts)
+vim.keymap.set('n', 'sv', ':vsplit<Return><C-w>w', opts)
+vim.keymap.set('n', 'sh', ':split<Return><C-w>w', opts)
 
 -- better window navigation
-keymap('n', '<Space>', '<C-w>w', opts)
-keymap('n', '<C-h>', '<C-w>h', opts)
-keymap('n', '<C-j>', '<C-w>j', opts)
-keymap('n', '<C-k>', '<C-w>k', opts)
-keymap('n', '<C-l>', '<C-w>l', opts)
+vim.keymap.set('n', '<Space>', '<C-w>w', opts)
+vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
+vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
+vim.keymap.set('n', '<C-k>', '<C-w>k', opts)
+vim.keymap.set('n', '<C-l>', '<C-w>l', opts)
 
--- Resize with arrows
-keymap("n", "<C-w>+", ":vertical resize +5<CR>", opts)
-keymap("n", "<C-w>-", ":vertical resize -5<CR>", opts)
+-- Resize window
+vim.keymap.set("n", "<C-w>+", ":vertical resize +5<CR>", opts)
+vim.keymap.set("n", "<C-w>-", ":vertical resize -5<CR>", opts)
 
 -- buffers
-keymap('n', '<Leader>bn', ':bn<CR>', opts)
+vim.keymap.set('n', '<Leader>bn', ':bn<CR>', opts)
 
 -- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+vim.keymap.set("v", "<", "<gv", opts)
+vim.keymap.set("v", ">", ">gv", opts)
 
 -- toggle highlightsearch
-keymap('n', '<Leader>h', ':set hls!<cr>', opts)
+vim.keymap.set('n', '<Leader>h', ':set hls!<cr>', opts)
 
 -- Asciidoctor und Pdf Funktionen
 vim.keymap.set("n", "<leader>ar", function ()

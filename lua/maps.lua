@@ -79,3 +79,7 @@ end, { desc = "switch to a note chosen in telescope", noremap = true, silent = t
 vim.keymap.set("n", "<leader>os", function ()
 	vim.cmd("ObsidianSearch")
 end, { desc = "grep search in telescope", noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>lf", function()
+  vim.lsp.buf.format()
+end, { desc = "Format current buffer" })

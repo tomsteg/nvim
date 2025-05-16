@@ -15,16 +15,6 @@ return {
     "nvim-lua/plenary.nvim",
   },
   opts = {
-    workspaces = {
-      {
-        name = "personal",
-        path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/thomas-obsidian",
-      },
-      {
-        name = "work",
-        path = "~/OneDrive - Agenda Informationssysteme GmbH & Co. KG/notes",
-      },
-    },
     templates = {
       folder = "templates",
       date_format = "%Y-%m-%d",

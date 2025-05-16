@@ -56,28 +56,3 @@ q			close blame window
 <C-e>		Close
 <CR>		Confirm
 
-## Packer
-
-Damit Packer genutzt werden kann, muss es extra installiert werden.
-Die Installationsanweisung findet man im Github Repo unter https://github.com/wbthomason/packer.nvim
-
--- You must run this or `PackerSync` whenever you make changes to your plugin configuration
--- Regenerate compiled loader file
-:PackerCompile
-
--- Remove any disabled or unused plugins
-:PackerClean
-
--- Clean, then install missing plugins
-:PackerInstall
-
--- Clean, then update and install plugins
--- supports the `--preview` flag as an optional first argument to preview updates
-:PackerUpdate
-
--- Perform `PackerUpdate` and then `PackerCompile`
--- supports the `--preview` flag as an optional first argument to preview updates
-:PackerSync
-
--- Loads opt plugin immediately
-:PackerLoad completion-nvim ale

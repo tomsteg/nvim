@@ -14,7 +14,8 @@ C-Down		horizontal decrease window
 C-Left		vertical decrease window
 C-Right		vertical increase window
 <Leader>h	toggle highlightsearch
-<Leader>el	toggle explorer on left side
+<Leader>e	toggle explorer on left side
+<leader>c   list vim commands
 
 ## visual mode
 

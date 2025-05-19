@@ -49,7 +49,10 @@ vim.keymap.set('n', '<leader>ld', function()
 end)
 vim.keymap.set('n', '<leader>le', function()
 	builtin.diagnostics()
-end)
+end, { desc = "LSP: Alle Diagnostics anzeigen" })
+vim.keymap.set('n', '<leader>lb', function()
+  builtin.diagnostics({ bufnr = 0 })
+end, { desc = "LSP: Diagnostics nur vom aktuellen Buffer" })
 
 require('telescope').setup{
 	defaults = {

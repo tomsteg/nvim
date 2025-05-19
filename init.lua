@@ -27,6 +27,12 @@ if is_win then
   require('windows')
 end
 
+vim.diagnostic.config({
+  virtual_text = true,   -- zeigt Fehler im Text an
+  signs = true,          -- zeigt Fehler im Zeichenbereich an
+  underline = true,      -- unterstreicht fehlerhafte Stellen
+})
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "asciidoc",
   callback = function()

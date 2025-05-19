@@ -19,7 +19,12 @@ nvim_lsp.intelephense.setup {
 nvim_lsp.ts_ls.setup {}
 
 nvim_lsp.volar.setup {
-	filetypes = { 'typescript', 'javascript', 'vue' },
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+  init_options = {
+    typescript = {
+      tsdk = vim.fn.expand("~/.npm-global/lib/node_modules/typescript/lib")
+    }
+  }
 }
 
 nvim_lsp.lua_ls.setup {

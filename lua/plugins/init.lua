@@ -15,15 +15,13 @@ return {
 	{"kyazdani42/nvim-tree.lua"},
 	{"sindrets/diffview.nvim"},
 	{"tpope/vim-fugitive"},
-	{
-	  "iamcco/markdown-preview.nvim",
-	  build = "cd app && npm install",
-	  ft = { "markdown" },
-	  config = function()
-		vim.g.mkdp_filetypes = { "markdown" }
-		vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", { desc = "Markdown Preview" })
-	  end,
-	},
+  {
+      'brianhuster/live-preview.nvim',
+      dependencies = {
+          -- You can choose one of the following pickers
+          'nvim-telescope/telescope.nvim'
+      },
+  },
 	{
 	  "epwalsh/obsidian.nvim",
 	  version = "*",  -- recommended, use latest release instead of latest commit

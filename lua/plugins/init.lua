@@ -60,7 +60,16 @@ return {
             endpoint = "https://api.openai.com/v1/chat/completions",
             secret = os.getenv("OPENAI_API_KEY"),
           },
-        }
+        },
+        agents = {
+          {
+            name = "ChatGPT41",
+            chat = true,
+            model = { model = "gpt-4.1", temperature = 1.1, top_p = 1 },
+            system_prompt = require("gp.defaults").chat_system_prompt, 
+          }
+        },
+        default_chat_agent = "ChatGPT41",
       }
       require("gp").setup(conf)
 

@@ -73,12 +73,15 @@ require('telescope').setup{
 	  },
 }
 
--- Lade die Extension
-require('telescope').load_extension('file_browser')
-vim.api.nvim_set_keymap(
-  'n',
-  '<leader>fo',
-  ":Telescope file_browser<CR>",
-  { noremap = true }
-)
+vim.keymap.set("n", "<leader>fo", function ()
+  require('telescope').extensions.file_browser.file_browser({
+    path = "%:p:h",
+    cwd = vim.fn.expand("%:p:h"),
+    respect_gitignore = false,
+    hidden = true,
+    grouped = true, 
+    initial_mode = "normal",
+    -- layout_config = { height = 40 }
+  })
+end, { noremap = true })
 

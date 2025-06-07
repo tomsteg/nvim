@@ -16,7 +16,18 @@ nvim_lsp.intelephense.setup {
 	}
 }
 
-nvim_lsp.ts_ls.setup {}
+nvim_lsp.eslint.setup({
+  on_attach = function(client)
+    client.server_capabilities.documentFormattingProvider = true
+  end,
+  settings = {
+    format = { enable = true },
+  }
+})
+
+nvim_lsp.ts_ls.setup {
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" }
+}
 
 nvim_lsp.volar.setup {
   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },

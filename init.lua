@@ -33,6 +33,11 @@ vim.diagnostic.config({
   underline = true,      -- unterstreicht fehlerhafte Stellen
 })
 
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.ts",
+  command = "set filetype=typescript"
+})
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "asciidoc",
   callback = function()

@@ -127,3 +127,11 @@ vim.keymap.set({"n", "i"}, "<C-g>x", "<cmd>GpContext<cr>", keymapOptions("Toggle
 vim.keymap.set("v", "<C-g>x", ":<C-u>'<,'>GpContext<cr>", keymapOptions("Visual Toggle Context"))
 
 vim.keymap.set({"n", "i", "v", "x"}, "<C-g>s", "<cmd>GpStop<cr>", keymapOptions("Stop"))
+
+-- toggleterm, lazygit
+-- Öffnet Lazygit im Terminal-Fenster
+vim.keymap.set("n", "<leader>gg", function()
+  require("toggleterm.terminal").Terminal
+    :new({ cmd = "lazygit", hidden = true, direction = "float" })
+    :toggle()
+end, { desc = "Lazygit öffnen" })

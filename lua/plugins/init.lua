@@ -75,5 +75,12 @@ return {
 
       -- Setup shortcuts here (see Usage > Shortcuts in the Documentation/Readme)
     end,
+  },
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = function()
+      require("toggleterm").setup()
+    end,
   }
 }

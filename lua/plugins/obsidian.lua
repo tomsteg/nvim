@@ -23,6 +23,19 @@ return {
 			return {} -- Fallback-Konfiguration
 		end
 	end)(),
+
+  note_id_func = function(title)
+    -- Wenn ein Titel angegeben ist, verwende ihn direkt als Dateiname
+    return title and title:gsub(" ", "-"):lower() or tostring(os.time())
+  end,
+
+  note_frontmatter_func = function(note)
+    return {
+      title = note.title,
+      tags = note.tags,
+    }
+  end,
+
 	mappings = {
 		-- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
 		["gf"] = {

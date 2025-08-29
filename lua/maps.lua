@@ -69,23 +69,23 @@ end, { desc = "PDF mit Safari öffnen", noremap = true, silent = true})
 -- Obsidian keymap
 -- built in:
 -- gf in normal_mode = goto file under cursor
-vim.keymap.set("n", "<leader>od", function ()
+vim.keymap.set("n", "<leader>nd", function ()
 	vim.cmd("ObsidianDailies")
 end, { desc = "Opens dailies in telescope", noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>ot", function ()
+vim.keymap.set("n", "<leader>nt", function ()
 	vim.cmd("ObsidianToday")
 end, { desc = "Opens the today daily note", noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>oc", function ()
+vim.keymap.set("n", "<leader>nc", function ()
 	vim.cmd("ObsidianTOC")
 end, { desc = "Opens the table of content in a picker list", noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>oo", function ()
+vim.keymap.set("n", "<leader>no", function ()
 	vim.cmd("ObsidianQuickSwitch")
 end, { desc = "switch to a note chosen in telescope", noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>os", function ()
+vim.keymap.set("n", "<leader>ns", function ()
 	vim.cmd("ObsidianSearch")
 end, { desc = "grep search in telescope", noremap = true, silent = true })
 

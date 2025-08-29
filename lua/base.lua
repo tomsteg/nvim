@@ -27,7 +27,7 @@ vim.opt.expandtab = false -- expand <Tab> to spaces in Insert mode
 
 -- spelling
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'markdown', 'text', 'gitcommit' }, -- Dateitypen, bei denen Spelling aktiv sein soll
+  pattern = { 'markdown', 'text', 'gitcommit', 'asciidoc' }, -- Dateitypen, bei denen Spelling aktiv sein soll
   callback = function()
     vim.opt_local.spell = true
     vim.opt_local.spelllang = { 'de', 'en' }

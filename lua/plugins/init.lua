@@ -82,5 +82,18 @@ return {
     config = function()
       require("toggleterm").setup()
     end,
+  },
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        markdown = { "prettier" },
+      },
+      format_on_save = {
+        lsp_fallback = true,
+        async = false,
+        timeout_ms = 5000,
+      },
+    },
   }
 }

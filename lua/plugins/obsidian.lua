@@ -24,9 +24,18 @@ return {
 		end
 	end)(),
 
+  -- sorgt dafür, dass neue Dateien den Namen aus dem Link übernehmen
   note_id_func = function(title)
-    -- Wenn ein Titel angegeben ist, verwende ihn direkt als Dateiname
-    return title and title:gsub(" ", "-"):lower() or tostring(os.time())
+    -- wenn ein Link [[Meine Neue Notiz]] erstellt wird,
+    -- dann soll die Datei "Meine-Neue-Notiz.md" heißen
+    if title ~= nil then
+      return title:gsub(" ", "-")            -- Leerzeichen → Bindestrich
+                 :gsub("[^%w%-]", "")        -- Sonderzeichen raus
+                 :lower()                    -- alles klein
+    else
+      -- Fallback, falls kein Titel angegeben ist
+      return tostring(os.time())
+    end
   end,
 
   note_frontmatter_func = function(note)

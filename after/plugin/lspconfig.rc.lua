@@ -1,22 +1,19 @@
-local status, nvim_lsp = pcall(require, 'lspconfig')
-if (not status) then return end
+vim.lsp.config('intelephense', {
+  filetypes = { 'php' },
+  settings = {
+    intelephense = {
+      diagnostics = {
+        enable = true,
+      },
+      phpstan = {
+        enabled = true,
+        command = "~/.composer/vendor/bin/phpstan",
+      }
+    }
+  }
+})
 
-nvim_lsp.intelephense.setup {
-	filetypes = {'php'};
-	settings = {
-		intelephense = {
-			diagnostics = {
-				enable = true,
-			},
-			phpstan = {
-				enabled = true,
-				command = "~/.composer/vendor/bin/phpstan",
-			}
-		}
-	}
-}
-
-nvim_lsp.eslint.setup({
+vim.lsp.config('eslint', {
   on_attach = function(client)
     client.server_capabilities.documentFormattingProvider = true
   end,
@@ -25,32 +22,32 @@ nvim_lsp.eslint.setup({
   }
 })
 
-nvim_lsp.ts_ls.setup {
+vim.lsp.config('ts_ls', {
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" }
-}
+})
 
-nvim_lsp.volar.setup {
+vim.lsp.config('volar', {
   filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
   init_options = {
     typescript = {
       tsdk = vim.fn.expand("~/.npm-global/lib/node_modules/typescript/lib")
     }
   }
-}
+})
 
-nvim_lsp.lua_ls.setup {
-	settings = {
-		Lua = {
-			diagnostics = {
-				-- Get the language server to recognize the `vim` global
-				globals = { 'vim' },
-			},
+vim.lsp.config('lua_ls', {
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = { 'vim' },
+      },
 
-			workspace = {
-				-- Make the server aware of Neovim runtime files
-				library = vim.api.nvim_get_runtime_file("", true),
-				checkThirdParty = false
-			},
-		},
-	},
-}
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false
+      },
+    },
+  },
+})

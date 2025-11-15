@@ -16,6 +16,7 @@ return {
   { "sindrets/diffview.nvim" },
   { "tpope/vim-fugitive" },
   { "renerocksai/calendar-vim" },
+  { "github/copilot.vim" },
   {
     'brianhuster/live-preview.nvim',
     dependencies = {

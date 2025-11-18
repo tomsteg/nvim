@@ -4,14 +4,8 @@ return {
   { "nvim-telescope/telescope.nvim" },
   { "nvim-telescope/telescope-file-browser.nvim" },
   { "windwp/nvim-autopairs" },
-  { "williamboman/nvim-lsp-installer" },
-  { "neovim/nvim-lspconfig" },
   { "dinhhuy258/git.nvim" },
-  { "onsails/lspkind-nvim" },
   { "L3MON4D3/LuaSnip" },
-  { "hrsh7th/cmp-buffer" },
-  { "hrsh7th/cmp-nvim-lsp" },
-  { "hrsh7th/nvim-cmp" },
   { "kyazdani42/nvim-tree.lua" },
   { "sindrets/diffview.nvim" },
   { "tpope/vim-fugitive" },
@@ -28,6 +22,22 @@ return {
     version = "*",
     config = function()
       require("toggleterm").setup()
+    end,
+  },
+  {
+    "williamboman/mason.nvim",
+    build = ":MasonUpdate",
+    config = function()
+      require("mason").setup()
+    end,
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = { "neovim/nvim-lspconfig" },
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = { "intelephense" },
+      })
     end,
   }
 }

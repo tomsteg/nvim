@@ -37,7 +37,12 @@ return {
     dependencies = { "neovim/nvim-lspconfig" },
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "intelephense" },
+        ensure_installed = {
+          "eslint",
+          "lua_ls",
+          "ts_ls",
+          "intelephense",
+        },
       })
     end,
   }

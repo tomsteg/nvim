@@ -37,6 +37,9 @@ vim.diagnostic.config({
   underline = true,      -- unterstreicht fehlerhafte Stellen
 })
 
+vim.g.copilot_filetypes = vim.g.copilot_filetypes or {}
+vim.g.copilot_filetypes["Avante"] = false;
+
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.ts",
   command = "set filetype=typescript"

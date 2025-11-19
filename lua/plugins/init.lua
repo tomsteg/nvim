@@ -7,6 +7,7 @@ return {
   { "dinhhuy258/git.nvim" },
   { "L3MON4D3/LuaSnip" },
   { "kyazdani42/nvim-tree.lua" },
+  { "nvim-tree/nvim-web-devicons" },
   { "sindrets/diffview.nvim" },
   { "tpope/vim-fugitive" },
   { "renerocksai/calendar-vim" },

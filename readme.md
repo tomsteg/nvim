@@ -57,3 +57,64 @@ q			close blame window
 <C-e>		Close
 <CR>		Confirm
 
+## Avante
+
+<leader>wf	file selector
+<leader>aa	ask assistant
+<leader>af	focus to assistant window
+<leader>ac	apply the suggestion
+
+### Sidebar
+
+]p			next prompt
+[p			previous prompt
+A			apply all
+a			apply cursor
+r			retry user request
+e			edit user request
+<Tab>		switch windows
+<S-Tab>		reverse switch windows
+d			remove file
+@			add file
+q			close sidebar
+<Leader>aa	show sidebar
+<Leader>at	toggle sidebar visibility
+<Leader>ar	refresh sidebar
+<Leader>af	switch sidebar focus
+
+### Suggestion
+
+<Leader>a?	select model
+<Leader>an	new ask
+<Leader>ae	edit selected blocks
+<Leader>aS	stop current AI request
+<Leader>ah	select between chat histories
+<M-l>		accept suggestion
+<M-]>		next suggestion
+<M-[>		previous suggestion
+<C-]>		dismiss suggestion
+<Leader>ad	toggle debug mode
+<Leader>as	toggle suggestion display
+<Leader>aR	toggle repomap
+
+### Files
+
+<Leader>ac	add current buffer to selected files
+<Leader>aB	add all buffer files to selected files
+
+### Diff
+
+co			choose ours
+ct			choose theirs
+ca			choose all theirs
+cb			choose both
+cc			choose cursor
+]x			move to next conflict
+[x			move to previous conflict
+
+### Confirm
+
+<Ctrl>wf	focus confirm window
+c			confirm code
+r			confirm response
+i			confirm input

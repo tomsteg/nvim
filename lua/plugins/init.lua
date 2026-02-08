@@ -46,6 +46,7 @@ return {
           "lua_ls",
           "ts_ls",
           "intelephense",
+          "vue_ls"
         },
       })
     end,

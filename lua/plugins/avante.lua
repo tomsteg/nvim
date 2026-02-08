@@ -21,8 +21,16 @@ return {
     ask = {
       auto_completion = false,
     },
-    provider = "openai",
+    provider = "claude",
     providers = {
+      claude = {
+        endpoint = "https://api.anthropic.com",
+        model = "claude-sonnet-4-5-20250929",
+        api_key_name = "ANTHROPIC_API_KEY",
+        extra_request_body = {
+          temperature = 0.2,
+        },
+      },
       openai = {
         endpoint = "https://api.openai.com/v1",
         model = "gpt-5.1-codex-mini",

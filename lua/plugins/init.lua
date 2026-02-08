@@ -60,7 +60,7 @@ return {
       "preservim/vim-markdown",
     },
     opts = {
-      dir = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/thomas-obsidian",
+      dir = os.getenv("OBSIDIAN_VAULT"),
       completion = {
         nvim_cmp = true, -- enable completion
       },

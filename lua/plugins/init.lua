@@ -3,6 +3,10 @@ return {
   { "nvim-lua/plenary.nvim" },
   { "nvim-telescope/telescope.nvim" },
   { "nvim-telescope/telescope-file-browser.nvim" },
+  { "hrsh7th/nvim-cmp" },
+  { "hrsh7th/cmp-nvim-lsp" },
+  { "hrsh7th/cmp-buffer" },
+  { "onsails/lspkind.nvim" },
   { "windwp/nvim-autopairs" },
   { "dinhhuy258/git.nvim" },
   { "L3MON4D3/LuaSnip" },
@@ -45,5 +49,26 @@ return {
         },
       })
     end,
-  }
+  },
+  {
+    "epwalsh/obsidian.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+      "nvim-telescope/telescope.nvim",
+      "preservim/vim-markdown",
+    },
+    opts = {
+      dir = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/thomas-obsidian",
+      completion = {
+        nvim_cmp = true, -- enable completion
+      },
+      mappings = {
+        ObsFollowLink = "gf", -- Keyboard shortcut to follow a markdown link
+      },
+    },
+    config = function(_, opts)
+      require("obsidian").setup(opts)
+    end,
+  },
 }

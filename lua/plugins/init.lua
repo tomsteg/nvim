@@ -65,7 +65,12 @@ return {
         nvim_cmp = true, -- enable completion
       },
       mappings = {
-        ObsFollowLink = "gf", -- Keyboard shortcut to follow a markdown link
+        ["gf"] = {
+          action = function()
+            return require("obsidian").util.gf_passthrough()
+          end,
+          opts = { noremap = false, expr = true, buffer = true },
+        },
       },
     },
     config = function(_, opts)

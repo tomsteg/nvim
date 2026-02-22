@@ -1,120 +1,183 @@
-# important keymaps
+# Neovim Keyboard Shortcuts
 
-## normal mode
+**Leader-Taste: `<Space>`**
 
-sv			split vertical
-sh			split horizontal
-<space>		cycle windows
-C-h			goto left window
-C-j			goto right window
-C-k			goto top window
-C-l 		goto bottom window
-C-Up		horizontal increase window
-C-Down		horizontal decrease window
-C-Left		vertical decrease window
-C-Right		vertical increase window
-<Leader>h	toggle highlightsearch
-<Leader>e	toggle explorer on left side
-<leader>c   list vim commands
+---
 
-## visual mode
+## Allgemein & Fenster-Navigation
 
-<			decrease indent
-> 			increase indent
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n` | `<C-Space>` | WhichKey Leader-Menü öffnen |
+| `n` | `<C-i>` | Vorwärts springen |
+| alle | `<` | Gemappt auf `[` |
+| alle | `>` | Gemappt auf `]` |
+| `n` | `sv` | Vertikalen Split öffnen, in neues Fenster wechseln |
+| `n` | `sh` | Horizontalen Split öffnen, in neues Fenster wechseln |
+| `n` | `<Space>` | Zum nächsten Fenster wechseln (`<C-w>w`) |
+| `n` | `<C-h>` | Zum linken Fenster |
+| `n` | `<C-j>` | Zum unteren Fenster |
+| `n` | `<C-k>` | Zum oberen Fenster |
+| `n` | `<C-l>` | Zum rechten Fenster |
+| `n` | `<C-w>+` | Fensterhöhe +5 |
+| `n` | `<C-w>-` | Fensterhöhe -5 |
 
-## git
+---
 
-<Leader>ga	open blame window
-q			close blame window
-<CR> 		open blame commit
-<Leader>go	open file/folder in git repository
-<Leader>gd	opens a new diff that compares against the current index	
-<Leader>gD	close git diff
-<Leader>gr	revert to the specific commit
-<Leader>gR	revert the current file to the specific commit
+## Buffer & Suche
 
-## telescope
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n` | `<Leader>bn` | Nächster Buffer |
+| `n` | `<Leader>h` | Suchhervorhebung umschalten |
+| `v` | `<` | Einrücken nach links (bleibt im Visual-Modus) |
+| `v` | `>` | Einrücken nach rechts (bleibt im Visual-Modus) |
 
-<Leader>ff	find files
-<Leader>fg	live grep
-<Leader>fh	help tags
-<leader>fb  find buffers
-<Leader>gf	git files
-<Leader>gb	git branches
-<Leader>gc	git commits
-<Leader>gs	git status
+---
 
-<Leader>lr	lsp references
-<Leader>ls	lsp symbols
-<Leader>ld	lsp definitions
-<Leader>le	lsp diagnostics
+## Datei-Explorer — NvimTree
 
-## Completion
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n` | `<Leader>e` | Datei-Explorer umschalten |
 
-<C-d>		Scroll docs -4
-<C-f>		Scroll docs 4
-<C-Space>	Complete
-<C-e>		Close
-<CR>		Confirm
+---
 
-## Avante
+## Telescope — Dateien & Suche
 
-<leader>wf	file selector
-<leader>aa	ask assistant
-<leader>af	focus to assistant window
-<leader>ac	apply the suggestion
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n` | `<Leader>ff` | Dateien finden (inkl. versteckte) |
+| `n` | `<Leader>fg` | Live Grep (Inhaltssuche) |
+| `n` | `<Leader>fb` | Offene Buffer auflisten |
+| `n` | `<Leader>fh` | Hilfe-Tags durchsuchen |
+| `n` | `<Leader>fo` | Datei-Browser im aktuellen Verzeichnis |
+| `n` | `<Leader>c` | Befehle durchsuchen & ausführen |
+| `i` | `<Esc>` | Telescope-Picker schließen |
 
-### Sidebar
+---
 
-]p			next prompt
-[p			previous prompt
-A			apply all
-a			apply cursor
-r			retry user request
-e			edit user request
-<Tab>		switch windows
-<S-Tab>		reverse switch windows
-d			remove file
-@			add file
-q			close sidebar
-<Leader>aa	show sidebar
-<Leader>at	toggle sidebar visibility
-<Leader>ar	refresh sidebar
-<Leader>af	switch sidebar focus
+## Telescope — Git
 
-### Suggestion
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n` | `<Leader>gf` | Git-getrackte Dateien durchsuchen |
+| `n` | `<Leader>gb` | Git-Branches durchsuchen |
+| `n` | `<Leader>gc` | Git-Commits durchsuchen |
+| `n` | `<Leader>gs` | Git-Status anzeigen |
 
-<Leader>a?	select model
-<Leader>an	new ask
-<Leader>ae	edit selected blocks
-<Leader>aS	stop current AI request
-<Leader>ah	select between chat histories
-<M-l>		accept suggestion
-<M-]>		next suggestion
-<M-[>		previous suggestion
-<C-]>		dismiss suggestion
-<Leader>ad	toggle debug mode
-<Leader>as	toggle suggestion display
-<Leader>aR	toggle repomap
+---
 
-### Files
+## Telescope — LSP
 
-<Leader>ac	add current buffer to selected files
-<Leader>aB	add all buffer files to selected files
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n` | `<Leader>lr` | Alle Referenzen anzeigen |
+| `n` | `<Leader>ls` | Dokument-Symbole |
+| `n` | `<Leader>ld` | Zur Definition springen |
+| `n` | `<Leader>le` | Alle Diagnosen (projektweite) |
+| `n` | `<Leader>lb` | Diagnosen für aktuellen Buffer |
 
-### Diff
+---
 
-co			choose ours
-ct			choose theirs
-ca			choose all theirs
-cb			choose both
-cc			choose cursor
-]x			move to next conflict
-[x			move to previous conflict
+## Git — Gitsigns (Hunk-Navigation)
 
-### Confirm
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n` | `]c` | Nächsten Hunk springen |
+| `n` | `[c` | Vorherigen Hunk springen |
+| `n`, `v` | `<Leader>hs` | Hunk stagen |
+| `n`, `v` | `<Leader>hr` | Hunk zurücksetzen |
+| `n` | `<Leader>hS` | Gesamten Buffer stagen |
+| `n` | `<Leader>hu` | Gestagten Hunk rückgängig machen |
+| `n` | `<Leader>hR` | Gesamten Buffer zurücksetzen |
+| `n` | `<Leader>hp` | Hunk-Vorschau |
+| `n` | `<Leader>hb` | Vollständige Blame-Info für aktuelle Zeile |
+| `n` | `<Leader>tb` | Inline-Blame umschalten |
+| `n` | `<Leader>hd` | Diff gegen Index |
+| `n` | `<Leader>hD` | Diff gegen letzten Commit |
+| `n` | `<Leader>td` | Gelöschte Zeilen anzeigen umschalten |
+| `o`, `x` | `ih` | Text-Objekt: inneren Hunk auswählen |
 
-<Ctrl>wf	focus confirm window
-c			confirm code
-r			confirm response
-i			confirm input
+---
+
+## Git — git.nvim (Blame, Browse, PRs)
+
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n` | `<Leader>ga` | Git-Blame-Fenster öffnen |
+| `n` | `<Leader>go` | Datei/Ordner im Git-Repository (Browser) öffnen |
+| `n` | `<Leader>gp` | Pull Request für aktuellen Branch öffnen |
+| `n` | `<Leader>gn` | Neuen Pull Request erstellen |
+| `n` | `<Leader>gd` | Git-Diff öffnen |
+| `n` | `<Leader>gD` | Git-Diff schließen |
+| `n` | `<Leader>gr` | Zu einem bestimmten Commit zurücksetzen |
+| `n` | `<Leader>gR` | Aktuelle Datei zu einem bestimmten Commit zurücksetzen |
+| `n` | `<Leader>gg` | Lazygit in schwebendem Terminal öffnen |
+| Blame-Fenster | `q` | Blame-Fenster schließen |
+| Blame-Fenster | `<CR>` | Blame-Commit öffnen |
+
+---
+
+## Completion — nvim-cmp
+
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `i` | `<C-d>` | Dokumentation nach oben scrollen |
+| `i` | `<C-f>` | Dokumentation nach unten scrollen |
+| `i` | `<C-Space>` | Vervollständigungsmenü öffnen |
+| `i` | `<C-e>` | Vervollständigungsmenü schließen |
+| `i` | `<CR>` | Ausgewählte Vervollständigung bestätigen |
+
+---
+
+## Asciidoctor
+
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n` | `<Leader>ar` | PDF aus aktueller Datei generieren (`asciidoctor-pdf`) |
+| `n` | `<Leader>ao` | Generiertes PDF in Safari öffnen |
+
+---
+
+## Telekasten — Zettelkasten
+
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n` | `<Leader>z` | Telekasten-Panel öffnen (alle Befehle) |
+| `n` | `<Leader>zf` | Notizen finden |
+| `n` | `<Leader>zg` | Notizen durchsuchen (Grep) |
+| `n` | `<Leader>zd` | Heutige Tagesnotiz öffnen |
+| `n` | `<Leader>zz` | Wiki-Link unter Cursor folgen |
+| `n` | `<Leader>zn` | Neue Notiz erstellen |
+| `n` | `<Leader>zc` | Kalender anzeigen |
+| `n` | `<Leader>zb` | Backlinks für aktuelle Notiz |
+| `n` | `<Leader>zI` | Bild-Link einfügen |
+| `i` | `[[` | Wiki-Link einfügen (Telekasten-Picker) |
+
+---
+
+## Obsidian.nvim
+
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n` | `gf` | Obsidian-Link folgen |
+
+---
+
+## Übersicht nach Leader-Gruppe
+
+| Präfix | Bereich |
+|--------|---------|
+| `<Leader>a_` | Asciidoctor (PDF) |
+| `<Leader>b_` | Buffer |
+| `<Leader>c` | Befehle (Telescope) |
+| `<Leader>e` | Datei-Explorer (NvimTree) |
+| `<Leader>f_` | Dateien suchen (Telescope) |
+| `<Leader>g_` | Git (Blame, Diff, PR, Browse) |
+| `<Leader>gg` | Lazygit |
+| `<Leader>h` | Suchhervorhebung umschalten |
+| `<Leader>h_` | Gitsigns Hunk-Aktionen |
+| `<Leader>l_` | LSP (Referenzen, Symbole, Diagnosen) |
+| `<Leader>t_` | Umschalten (Blame, gelöschte Zeilen) |
+| `<Leader>z_` | Telekasten (Zettelkasten) |

@@ -5,6 +5,7 @@ return {
   },
   {
     "MeanderingProgrammer/render-markdown.nvim",
+    lazy = false,
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
@@ -25,6 +26,9 @@ return {
       bullet = {
         right_pad = 1,
       },
+      html = { enabled = false },
+      latex = { enabled = false },
+      yaml = { enabled = false },
     },
   },
   { "nvim-lualine/lualine.nvim" },
@@ -77,32 +81,6 @@ return {
           "vue_ls"
         },
       })
-    end,
-  },
-  {
-    "epwalsh/obsidian.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-      "nvim-telescope/telescope.nvim",
-      "preservim/vim-markdown",
-    },
-    opts = {
-      dir = os.getenv("OBSIDIAN_VAULT"),
-      completion = {
-        nvim_cmp = true, -- enable completion
-      },
-      mappings = {
-        ["gf"] = {
-          action = function()
-            return require("obsidian").util.gf_passthrough()
-          end,
-          opts = { noremap = false, expr = true, buffer = true },
-        },
-      },
-    },
-    config = function(_, opts)
-      require("obsidian").setup(opts)
     end,
   },
 }

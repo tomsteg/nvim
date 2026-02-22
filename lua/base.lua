@@ -1,4 +1,3 @@
-vim.g.vim_markdown_folding_disabled = 1
 
 vim.opt.backspace = { 'start', 'eol', 'indent' } -- specifies what <BS>, CTRL-W, etc. can do in Insert mode
 vim.opt.conceallevel = 1

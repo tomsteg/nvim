@@ -21,6 +21,7 @@ return {
       dailies = dailies,
       templates = templates,
       template_new_daily = template_new_daily,
+      auto_set_filetype = false,
     })
 
     -- keymaps (unchanged)
@@ -29,6 +30,7 @@ return {
     vim.keymap.set("n", "<leader>zg", "<cmd>Telekasten search_notes<CR>")
     vim.keymap.set("n", "<leader>zd", "<cmd>Telekasten goto_today<CR>")
     vim.keymap.set("n", "<leader>zz", "<cmd>Telekasten follow_link<CR>")
+    vim.keymap.set("n", "gf", "<cmd>Telekasten follow_link<CR>", { buffer = false })
     vim.keymap.set("n", "<leader>zn", "<cmd>Telekasten new_note<CR>")
     vim.keymap.set("n", "<leader>zc", "<cmd>Telekasten show_calendar<CR>")
     vim.keymap.set("n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>")

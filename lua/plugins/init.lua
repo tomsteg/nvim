@@ -47,6 +47,14 @@ return {
   { "sindrets/diffview.nvim" },
   { "tpope/vim-fugitive" },
   { "renerocksai/calendar-vim" },
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup()
+    end,
+  },
   { "github/copilot.vim" },
   {
     'brianhuster/live-preview.nvim',

@@ -48,6 +48,17 @@ return {
   { "tpope/vim-fugitive" },
   { "renerocksai/calendar-vim" },
   {
+    "stevearc/conform.nvim",
+    event = "BufWritePre",
+    config = function()
+      require("conform").setup({
+        formatters_by_ft = {
+          markdown = { "prettier" },
+        },
+      })
+    end,
+  },
+  {
     "kylechui/nvim-surround",
     version = "*",
     event = "VeryLazy",

@@ -66,6 +66,11 @@ vim.keymap.set("n", "<leader>ao", function ()
 	vim.cmd("!open -a Safari " .. output_file .. " &")
 end, { desc = "PDF mit Safari öffnen", noremap = true, silent = true})
 
+-- Markdown formatieren mit prettier (conform.nvim)
+vim.keymap.set("n", "<Leader>p", function()
+  require("conform").format({ async = true })
+end, { desc = "Datei formatieren (prettier)", noremap = true, silent = true })
+
 -- toggleterm, lazygit
 -- Öffnet Lazygit im Terminal-Fenster
 vim.keymap.set("n", "<leader>gg", function()

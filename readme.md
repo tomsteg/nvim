@@ -119,6 +119,15 @@
 
 ---
 
+## Copilot
+
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `i` | `Tab` | Vorschlag akzeptieren |
+| `i` | `<C-l>` | Vorschlag wortweise akzeptieren |
+
+---
+
 ## Completion — nvim-cmp
 
 | Modus | Kürzel | Aktion |

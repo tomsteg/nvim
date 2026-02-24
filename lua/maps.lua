@@ -71,6 +71,9 @@ vim.keymap.set("n", "<Leader>p", function()
   require("conform").format({ async = true })
 end, { desc = "Datei formatieren (prettier)", noremap = true, silent = true })
 
+-- Copilot
+vim.keymap.set('i', '<C-l>', '<Plug>(copilot-accept-word)', { silent = true, desc = "Copilot: Wort akzeptieren" })
+
 -- toggleterm, lazygit
 -- Öffnet Lazygit im Terminal-Fenster
 vim.keymap.set("n", "<leader>gg", function()

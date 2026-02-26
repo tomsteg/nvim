@@ -188,6 +188,14 @@
 
 ---
 
+## Tastaturkürzel-Hilfe
+
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n` | `<Leader>?` | Tastaturkürzel (diese Liste) in Telescope anzeigen |
+
+---
+
 ## Übersicht nach Leader-Gruppe
 
 | Präfix | Bereich |

@@ -49,6 +49,11 @@ vim.keymap.set('n', '<Leader>bn', ':bn<CR>', opts)
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
 
+-- Tastaturkürzel anzeigen
+vim.keymap.set('n', '<Leader>?', function()
+  require('keybindings-help').show()
+end, { desc = "Tastaturkürzel anzeigen", noremap = true, silent = true })
+
 -- toggle highlightsearch
 vim.keymap.set('n', '<Leader>h', ':set hls!<cr>', opts)
 

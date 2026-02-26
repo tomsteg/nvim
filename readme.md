@@ -166,6 +166,20 @@
 
 ---
 
+## nvim-surround — Text einrahmen
+
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n` | `ysiw*` | Wort mit `*` umschließen → `*Wort*` |
+| `n` | `ysiw**` | Wort mit `**` umschließen → `**Wort**` |
+| `n` | `yss"` | Gesamte Zeile mit `"` umschließen |
+| `n` | `ds*` | Umgebende `*` entfernen |
+| `n` | `cs*_` | `*` durch `_` ersetzen |
+| `v` | `S*` | Markierten Text mit `*` umschließen |
+| `v` | `S"` | Markierten Text mit `"` umschließen |
+
+---
+
 ## Obsidian.nvim
 
 | Modus | Kürzel | Aktion |

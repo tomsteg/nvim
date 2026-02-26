@@ -44,6 +44,7 @@ return {
   { "L3MON4D3/LuaSnip" },
   { "kyazdani42/nvim-tree.lua" },
   { "nvim-tree/nvim-web-devicons" },
+  { "lewis6991/gitsigns.nvim" },
   { "sindrets/diffview.nvim" },
   { "tpope/vim-fugitive" },
   { "renerocksai/calendar-vim" },

@@ -27,6 +27,8 @@ if is_win then
   require('windows')
 end
 
+vim.cmd([[command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis]])
+
 vim.diagnostic.config({
   virtual_text = true,   -- zeigt Fehler im Text an
   signs = true,          -- zeigt Fehler im Zeichenbereich an

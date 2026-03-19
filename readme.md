@@ -188,6 +188,15 @@
 
 ---
 
+## Markdown — Aufgaben (Checkboxen)
+
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n` | `<Leader>x` | Aufgabe `- [ ]` / `- [x]` umschalten |
+| `n` | `<Leader>t` | Listenpunkt `- ` ↔ Aufgabe `- [ ]` umwandeln |
+
+---
+
 ## Tastaturkürzel-Hilfe
 
 | Modus | Kürzel | Aktion |
@@ -211,4 +220,5 @@
 | `<Leader>h_` | Gitsigns Hunk-Aktionen |
 | `<Leader>l_` | LSP (Referenzen, Symbole, Diagnosen) |
 | `<Leader>t_` | Umschalten (Blame, gelöschte Zeilen) |
+| `<Leader>x` | Markdown: Aufgabe umschalten |
 | `<Leader>z_` | Telekasten (Zettelkasten) |

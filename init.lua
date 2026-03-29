@@ -76,6 +76,15 @@ local function get_random_affirmation()
   return items[math.random(#items)]
 end
 
+vim.api.nvim_create_autocmd("InsertLeave", {
+  pattern = "*",
+  callback = function()
+    if vim.bo.modified and vim.bo.buftype == "" and vim.fn.expand("%") ~= "" then
+      vim.cmd("silent! write")
+    end
+  end,
+})
+
 vim.api.nvim_create_autocmd("BufReadPost", {
   pattern = "*/daily/*.md",
   callback = function(ev)

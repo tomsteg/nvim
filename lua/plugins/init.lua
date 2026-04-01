@@ -55,6 +55,13 @@ return {
       require("conform").setup({
         formatters_by_ft = {
           markdown = { "prettier" },
+          javascript = { "prettier" },
+          typescript = { "prettier" },
+          javascriptreact = { "prettier" },
+          typescriptreact = { "prettier" },
+          vue = { "prettier" },
+          css = { "prettier" },
+          json = { "prettier" },
         },
       })
     end,

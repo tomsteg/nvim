@@ -79,6 +79,22 @@ end, { desc = "Datei formatieren (prettier)", noremap = true, silent = true })
 -- Copilot
 vim.keymap.set('i', '<C-l>', '<Plug>(copilot-accept-word)', { silent = true, desc = "Copilot: Wort akzeptieren" })
 
+-- Aktuelle Datei löschen
+vim.keymap.set('n', '<leader>dF', function()
+  local filepath = vim.fn.expand('%')
+  if filepath == '' then
+    vim.notify('Kein Dateiname', vim.log.levels.WARN)
+    return
+  end
+  vim.ui.input({ prompt = 'Datei löschen? (y/n): ' }, function(input)
+    if input == 'y' then
+      vim.fn.delete(filepath)
+      vim.cmd('bdelete!')
+      vim.notify('Gelöscht: ' .. filepath)
+    end
+  end)
+end, { desc = 'Aktuelle Datei löschen', noremap = true, silent = true })
+
 -- toggleterm, lazygit
 -- Öffnet Lazygit im Terminal-Fenster
 vim.keymap.set("n", "<leader>gg", function()

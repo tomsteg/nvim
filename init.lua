@@ -61,7 +61,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Zufällige Affirmation beim Anlegen neuer Daily-Notizen
 local function get_random_affirmation()
-  local vault = vim.env.TELEKASTEN_HOME
+  local vault = vim.env.OBSIDIAN_VAULT
   if not vault then return nil end
   local path = vault .. "/affirmationen.md"
   local ok, lines = pcall(vim.fn.readfile, path)

@@ -149,20 +149,21 @@
 
 ---
 
-## Telekasten — Zettelkasten
+## Obsidian.nvim — Zettelkasten
 
 | Modus | Kürzel | Aktion |
 |-------|--------|--------|
-| `n` | `<Leader>z` | Telekasten-Panel öffnen (alle Befehle) |
-| `n` | `<Leader>zf` | Notizen finden |
+| `n` | `<Leader>z` | Quick Switch (Notiz wechseln) |
+| `n` | `<Leader>zf` | Notizen suchen |
 | `n` | `<Leader>zg` | Notizen durchsuchen (Grep) |
 | `n` | `<Leader>zd` | Heutige Tagesnotiz öffnen |
 | `n` | `<Leader>zz` | Wiki-Link unter Cursor folgen |
+| `n` | `gf` | Wiki-Link unter Cursor folgen |
 | `n` | `<Leader>zn` | Neue Notiz erstellen |
-| `n` | `<Leader>zc` | Kalender anzeigen |
+| `n` | `<Leader>zc` | Daily Notes auflisten |
 | `n` | `<Leader>zb` | Backlinks für aktuelle Notiz |
-| `n` | `<Leader>zI` | Bild-Link einfügen |
-| `i` | `[[` | Wiki-Link einfügen (Telekasten-Picker) |
+| `n` | `<Leader>zI` | Bild einfügen |
+| `i` | `[[` | Wiki-Link einfügen |
 
 ---
 
@@ -180,11 +181,12 @@
 
 ---
 
-## Obsidian.nvim
+## Datei-Operationen
 
 | Modus | Kürzel | Aktion |
 |-------|--------|--------|
-| `n` | `gf` | Obsidian-Link folgen |
+| `n` | `<Leader>dF` | Aktuelle Datei löschen (mit Bestätigung) |
+| `n` | `<Leader>p` | Datei formatieren (prettier) |
 
 ---
 
@@ -221,4 +223,4 @@
 | `<Leader>l_` | LSP (Referenzen, Symbole, Diagnosen) |
 | `<Leader>t_` | Umschalten (Blame, gelöschte Zeilen) |
 | `<Leader>x` | Markdown: Aufgabe umschalten |
-| `<Leader>z_` | Telekasten (Zettelkasten) |
+| `<Leader>z_` | Obsidian.nvim (Zettelkasten) |

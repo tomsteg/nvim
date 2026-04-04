@@ -128,6 +128,16 @@
 
 ---
 
+## CodeCompanion — KI-Assistent
+
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n` | `<Leader>ac` | Chat öffnen/schließen |
+| `n`, `v` | `<Leader>aa` | Actions-Menü öffnen |
+| `n`, `v` | `<Leader>ai` | Inline-Edit |
+
+---
+
 ## Completion — nvim-cmp
 
 | Modus | Kürzel | Aktion |
@@ -211,7 +221,7 @@
 
 | Präfix | Bereich |
 |--------|---------|
-| `<Leader>a_` | Asciidoctor (PDF) |
+| `<Leader>a_` | Asciidoctor (PDF) + CodeCompanion (KI) |
 | `<Leader>b_` | Buffer |
 | `<Leader>c` | Befehle (Telescope) |
 | `<Leader>e` | Datei-Explorer (NvimTree) |

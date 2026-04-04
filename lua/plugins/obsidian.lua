@@ -32,10 +32,19 @@ return {
 
     -- Kein automatisches id/alias im Frontmatter — Template übernimmt das
     note_frontmatter_func = function(note)
-      local out = {}
+      local out = {
+        date = os.date("%Y-%m-%d"),
+      }
+      -- Tags explizit erhalten (obsidian.nvim verwaltet diese intern)
+      if note.tags and #note.tags > 0 then
+        out.tags = note.tags
+      end
+      -- Custom-Felder (alle übrigen Frontmatter-Felder) — vorhandenes date überschreibt nicht
       if note.metadata ~= nil then
         for k, v in pairs(note.metadata) do
-          out[k] = v
+          if out[k] == nil then
+            out[k] = v
+          end
         end
       end
       return out
@@ -53,6 +62,25 @@ return {
   },
   config = function(_, opts)
     require("obsidian").setup(opts)
+
+    -- Automatisch date-Frontmatter einfügen, wenn eine neue .md-Datei im Vault direkt erstellt wird
+    vim.api.nvim_create_autocmd("BufNewFile", {
+      pattern = (vim.env.OBSIDIAN_VAULT or "") .. "/**/*.md",
+      callback = function()
+        vim.defer_fn(function()
+          local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+          local has_frontmatter = #lines > 0 and lines[1] == "---"
+          if not has_frontmatter then
+            vim.api.nvim_buf_set_lines(0, 0, 0, false, {
+              "---",
+              "date: " .. os.date("%Y-%m-%d"),
+              "---",
+              "",
+            })
+          end
+        end, 50)
+      end,
+    })
 
     vim.keymap.set("n", "<leader>z",  "<cmd>ObsidianQuickSwitch<CR>",  { desc = "Obsidian: Quick Switch" })
     vim.keymap.set("n", "<leader>zf", "<cmd>ObsidianSearch<CR>",       { desc = "Obsidian: Suche" })

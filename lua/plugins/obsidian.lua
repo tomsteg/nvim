@@ -64,6 +64,7 @@ return {
     },
   },
   config = function(_, opts)
+    vim.g.calendar_monday = 1  -- Woche beginnt mit Montag
     require("obsidian").setup(opts)
 
     -- Automatisch date-Frontmatter einfügen, wenn eine neue .md-Datei im Vault direkt erstellt wird

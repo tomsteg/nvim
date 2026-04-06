@@ -209,6 +209,22 @@
 
 ---
 
+## Markdown — Aufgabendaten (Obsidian Tasks Format)
+
+Datum wird ans Ende der aktuellen Zeile angehängt bzw. aktualisiert falls bereits vorhanden.
+Überfällige Daten werden **rot**, heutige **gelb** hervorgehoben.
+
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n` | `<Leader>d1` | Fälligkeitsdatum `📅` heute einfügen |
+| `n` | `<Leader>d2` | Fälligkeitsdatum `📅` morgen einfügen |
+| `n` | `<Leader>d3` | Fälligkeitsdatum `📅` in 7 Tagen einfügen |
+| `n` | `<Leader>d4` | Fälligkeitsdatum `📅` per Kalender wählen |
+| `n` | `<Leader>d5` | Erinnerungsdatum `⏰` heute einfügen |
+| `n` | `<Leader>d6` | Erinnerungsdatum `⏰` per Kalender wählen |
+
+---
+
 ## Tastaturkürzel-Hilfe
 
 | Modus | Kürzel | Aktion |
@@ -233,4 +249,5 @@
 | `<Leader>l_` | LSP (Referenzen, Symbole, Diagnosen) |
 | `<Leader>t_` | Umschalten (Blame, gelöschte Zeilen) |
 | `<Leader>x` | Markdown: Aufgabe umschalten |
+| `<Leader>d_` | Markdown: Aufgabendaten (📅 Fälligkeit, ⏰ Erinnerung) |
 | `<Leader>z_` | Obsidian.nvim (Zettelkasten) |

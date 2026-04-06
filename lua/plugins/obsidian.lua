@@ -54,6 +54,7 @@ return {
 
     templates = {
       folder = "templates",
+      date_format = "%Y-%m-%d",
     },
     completion = {
       nvim_cmp = true,

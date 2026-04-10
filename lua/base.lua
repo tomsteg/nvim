@@ -26,6 +26,12 @@ vim.opt.autoindent = true -- automatically set the indent of a new line
 vim.opt.smartindent = true -- do clever autoindenting
 vim.opt.expandtab = false -- expand <Tab> to spaces in Insert mode
 
+-- detect and auto-reload external file changes
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold' }, {
+  command = 'silent! checktime',
+})
+
 -- spelling
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'markdown', 'text', 'gitcommit', 'asciidoc' }, -- Dateitypen, bei denen Spelling aktiv sein soll

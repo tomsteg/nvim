@@ -118,6 +118,21 @@ s
 | `n`, `v` | `<Leader>aa` | Actions-Menü öffnen |
 | `n`, `v` | `<Leader>ai` | Inline-Edit |
 
+**Chat-Buffer:**
+
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n`, `i` | `<CR>` / `<C-CR>` | Nachricht senden (eigene Belegung, Standard: `<C-s>`) |
+| `n`, `i` | `<C-c>` | Chat schließen |
+
+**Inline-Modus** (nach einer Inline-Anfrage):
+
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n` | `ga` | Änderung akzeptieren |
+| `n` | `gr` | Änderung ablehnen |
+| `n` | `q` | Anfrage stoppen |
+
 ---
 
 ## Completion — nvim-cmp

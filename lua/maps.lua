@@ -8,15 +8,6 @@
 
 local opts = { noremap = true, silent = true }
 
-local function keymapOptions(desc)
-    return {
-        noremap = true,
-        silent = true,
-        nowait = true,
-        desc = "GPT prompt " .. desc,
-    }
-end
-
 --Remap space as leader key
 vim.keymap.set("n", "<Space>", "", opts)
 vim.g.mapleader = " "
@@ -70,11 +61,6 @@ vim.keymap.set("n", "<leader>ao", function ()
 	local output_file = vim.fn.expand("%:r") .. ".pdf"
 	vim.cmd("!open -a Safari " .. output_file .. " &")
 end, { desc = "PDF mit Safari öffnen", noremap = true, silent = true})
-
--- Markdown formatieren mit prettier (conform.nvim)
-vim.keymap.set("n", "<Leader>p", function()
-  require("conform").format({ async = true })
-end, { desc = "Datei formatieren (prettier)", noremap = true, silent = true })
 
 -- Copilot
 vim.keymap.set('i', '<C-l>', '<Plug>(copilot-accept-word)', { silent = true, desc = "Copilot: Wort akzeptieren" })

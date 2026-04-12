@@ -56,8 +56,19 @@ return {
   {
     "stevearc/conform.nvim",
     event = "BufWritePre",
+    keys = {
+      {
+        "<Leader>p",
+        function() require("conform").format({ async = true }) end,
+        desc = "Datei formatieren (prettier)",
+      },
+    },
     config = function()
       require("conform").setup({
+        format_on_save = {
+          timeout_ms = 500,
+          lsp_fallback = true,
+        },
         formatters_by_ft = {
           markdown = { "prettier" },
           javascript = { "prettier" },
@@ -89,6 +100,14 @@ return {
     },
     config = function()
       require("codecompanion").setup({
+        display = {
+          chat = {
+            window = {
+              layout = "vertical",
+              position = "right",
+            },
+          },
+        },
         adapters = {
           anthropic = function()
             return require("codecompanion.adapters").extend("anthropic", {

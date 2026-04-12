@@ -45,6 +45,11 @@ return {
   { "kyazdani42/nvim-tree.lua" },
   { "nvim-tree/nvim-web-devicons" },
   { "lewis6991/gitsigns.nvim" },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {},
+  },
   { "sindrets/diffview.nvim" },
   { "tpope/vim-fugitive" },
   { "renerocksai/calendar-vim" },

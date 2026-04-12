@@ -89,7 +89,7 @@
 | `n`, `v` | `<Leader>hs` | Hunk stagen |
 | `n`, `v` | `<Leader>hr` | Hunk zurücksetzen |
 | `n` | `<Leader>hS` | Gesamten Buffer stagen |
-| `n` | `<Leader>hu` | Gestagten Hunk rückgängig machen |
+s
 | `n` | `<Leader>hR` | Gesamten Buffer zurücksetzen |
 | `n` | `<Leader>hp` | Hunk-Vorschau |
 | `n` | `<Leader>hb` | Vollständige Blame-Info für aktuelle Zeile |
@@ -98,24 +98,6 @@
 | `n` | `<Leader>hD` | Diff gegen letzten Commit |
 | `n` | `<Leader>td` | Gelöschte Zeilen anzeigen umschalten |
 | `o`, `x` | `ih` | Text-Objekt: inneren Hunk auswählen |
-
----
-
-## Git — git.nvim (Blame, Browse, PRs)
-
-| Modus | Kürzel | Aktion |
-|-------|--------|--------|
-| `n` | `<Leader>ga` | Git-Blame-Fenster öffnen |
-| `n` | `<Leader>go` | Datei/Ordner im Git-Repository (Browser) öffnen |
-| `n` | `<Leader>gp` | Pull Request für aktuellen Branch öffnen |
-| `n` | `<Leader>gn` | Neuen Pull Request erstellen |
-| `n` | `<Leader>gd` | Git-Diff öffnen |
-| `n` | `<Leader>gD` | Git-Diff schließen |
-| `n` | `<Leader>gr` | Zu einem bestimmten Commit zurücksetzen |
-| `n` | `<Leader>gR` | Aktuelle Datei zu einem bestimmten Commit zurücksetzen |
-| `n` | `<Leader>gg` | Lazygit in schwebendem Terminal öffnen |
-| Blame-Fenster | `q` | Blame-Fenster schließen |
-| Blame-Fenster | `<CR>` | Blame-Commit öffnen |
 
 ---
 
@@ -242,7 +224,7 @@ Datum wird ans Ende der aktuellen Zeile angehängt bzw. aktualisiert falls berei
 | `<Leader>c` | Befehle (Telescope) |
 | `<Leader>e` | Datei-Explorer (NvimTree) |
 | `<Leader>f_` | Dateien suchen (Telescope) |
-| `<Leader>g_` | Git (Blame, Diff, PR, Browse) |
+| `<Leader>g_` | Git (Telescope: Branches, Commits, Status) |
 | `<Leader>gg` | Lazygit |
 | `<Leader>h` | Suchhervorhebung umschalten |
 | `<Leader>h_` | Gitsigns Hunk-Aktionen |

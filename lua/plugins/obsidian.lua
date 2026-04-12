@@ -96,6 +96,5 @@ return {
     vim.keymap.set("n", "<leader>zc", "<cmd>ObsidianDailies<CR>",      { desc = "Obsidian: Daily Notes" })
     vim.keymap.set("n", "<leader>zb", "<cmd>ObsidianBacklinks<CR>",    { desc = "Obsidian: Backlinks" })
     vim.keymap.set("n", "<leader>zI", "<cmd>ObsidianPasteImg<CR>",     { desc = "Obsidian: Bild einfügen" })
-    vim.keymap.set("i", "[[",         "<cmd>ObsidianLinkNew<CR>",      { desc = "Obsidian: Link einfügen" })
   end,
 }

@@ -41,7 +41,6 @@ return {
   { "hrsh7th/cmp-buffer" },
   { "onsails/lspkind.nvim" },
   { "windwp/nvim-autopairs" },
-  { "dinhhuy258/git.nvim" },
   { "L3MON4D3/LuaSnip" },
   { "kyazdani42/nvim-tree.lua" },
   { "nvim-tree/nvim-web-devicons" },
@@ -98,6 +97,15 @@ return {
           chat = { adapter = "anthropic" },
           inline = { adapter = "anthropic" },
           agent = { adapter = "anthropic" },
+        },
+        interactions = {
+          chat = {
+            keymaps = {
+              send = {
+                modes = { n = "<CR>", i = "<C-CR>" },
+              },
+            },
+          },
         },
       })
     end,

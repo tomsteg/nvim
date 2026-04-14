@@ -14,7 +14,6 @@
 | alle | `>` | Gemappt auf `]` |
 | `n` | `sv` | Vertikalen Split öffnen, in neues Fenster wechseln |
 | `n` | `sh` | Horizontalen Split öffnen, in neues Fenster wechseln |
-| `n` | `<Space>` | Zum nächsten Fenster wechseln (`<C-w>w`) |
 | `n` | `<C-h>` | Zum linken Fenster |
 | `n` | `<C-j>` | Zum unteren Fenster |
 | `n` | `<C-k>` | Zum oberen Fenster |
@@ -89,7 +88,6 @@
 | `n`, `v` | `<Leader>hs` | Hunk stagen |
 | `n`, `v` | `<Leader>hr` | Hunk zurücksetzen |
 | `n` | `<Leader>hS` | Gesamten Buffer stagen |
-s
 | `n` | `<Leader>hR` | Gesamten Buffer zurücksetzen |
 | `n` | `<Leader>hp` | Hunk-Vorschau |
 | `n` | `<Leader>hb` | Vollständige Blame-Info für aktuelle Zeile |
@@ -188,6 +186,15 @@ s
 
 ---
 
+## Terminal
+
+| Modus | Kürzel | Aktion |
+|-------|--------|--------|
+| `n` | `<Leader>t` | Terminal in vertikalem Split öffnen |
+| `t` | `<Esc><Esc>` | Terminal: in den Normal-Modus wechseln |
+
+---
+
 ## Datei-Operationen
 
 | Modus | Kürzel | Aktion |
@@ -202,7 +209,7 @@ s
 | Modus | Kürzel | Aktion |
 |-------|--------|--------|
 | `n` | `<Leader>x` | Aufgabe `- [ ]` / `- [x]` umschalten |
-| `n` | `<Leader>t` | Listenpunkt `- ` ↔ Aufgabe `- [ ]` umwandeln |
+| `n` | `<Leader>mt` | Listenpunkt `- ` ↔ Aufgabe `- [ ]` umwandeln |
 
 ---
 
@@ -244,6 +251,7 @@ Datum wird ans Ende der aktuellen Zeile angehängt bzw. aktualisiert falls berei
 | `<Leader>h` | Suchhervorhebung umschalten |
 | `<Leader>h_` | Gitsigns Hunk-Aktionen |
 | `<Leader>l_` | LSP (Referenzen, Symbole, Diagnosen) |
+| `<Leader>t` | Terminal öffnen |
 | `<Leader>t_` | Umschalten (Blame, gelöschte Zeilen) |
 | `<Leader>x` | Markdown: Aufgabe umschalten |
 | `<Leader>d_` | Markdown: Aufgabendaten (📅 Fälligkeit, ⏰ Erinnerung) |

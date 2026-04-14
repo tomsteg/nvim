@@ -37,7 +37,7 @@ vim.keymap.set("n", "<leader>x", toggle_checkbox, {
   silent = true,
 })
 
-vim.keymap.set("n", "<leader>t", toggle_task, {
+vim.keymap.set("n", "<leader>mt", toggle_task, {
   buffer = true,
   desc = "Markdown: Listenpunkt zu Aufgabe umwandeln (und zurück)",
   noremap = true,

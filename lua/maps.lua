@@ -23,7 +23,6 @@ vim.keymap.set('n', 'sv', ':vsplit<Return><C-w>w', opts)
 vim.keymap.set('n', 'sh', ':split<Return><C-w>w', opts)
 
 -- better window navigation
-vim.keymap.set('n', '<Space>', '<C-w>w', opts)
 vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
 vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
 vim.keymap.set('n', '<C-k>', '<C-w>k', opts)
@@ -80,6 +79,10 @@ vim.keymap.set('n', '<leader>dF', function()
     end
   end)
 end, { desc = 'Aktuelle Datei löschen', noremap = true, silent = true })
+
+-- Terminal
+vim.keymap.set('n', '<leader>t', ':botright vsplit | term<CR>i', { noremap = true, silent = true, desc = "Terminal öffnen" })
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { noremap = true, silent = true, desc = "Terminal: Normal Mode" })
 
 -- toggleterm, lazygit
 -- Öffnet Lazygit im Terminal-Fenster

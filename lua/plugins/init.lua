@@ -36,6 +36,10 @@ return {
   { "nvim-lua/plenary.nvim" },
   { "nvim-telescope/telescope.nvim" },
   { "nvim-telescope/telescope-file-browser.nvim" },
+  {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = "make",
+  },
   { "hrsh7th/nvim-cmp" },
   { "hrsh7th/cmp-nvim-lsp" },
   { "hrsh7th/cmp-buffer" },

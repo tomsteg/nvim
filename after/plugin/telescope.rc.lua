@@ -1,4 +1,4 @@
-local status, telescope = pcall(require, 'telescope')
+local status = pcall(require, 'telescope')
 if (not status) then return end
 local actions = require('telescope.actions')
 local builtin = require('telescope.builtin')
@@ -19,7 +19,7 @@ end)
 vim.keymap.set('n', '<leader>fh', function()
 	builtin.help_tags()
 end)
-vim.keymap.set('n', '<leader>c', function() 
+vim.keymap.set('n', '<leader>c', function()
 	builtin.commands()
 end)
 
@@ -57,7 +57,8 @@ end, { desc = "LSP: Diagnostics nur vom aktuellen Buffer" })
 require('telescope').setup{
 	defaults = {
 		file_ignore_patterns = {
-			'node_modules/'
+			'node_modules/',
+			'%.git/',
 		},
 		mappings = {
 			i = {
@@ -65,13 +66,20 @@ require('telescope').setup{
 			}
 		}
 	},
-	  extensions = {
+	extensions = {
+		fzf = {
+			fuzzy = true,
+			override_generic_sorter = true,
+			override_file_sorter = true,
+			case_mode = "smart_case",
+		},
 		file_browser = {
-		  -- theme = "ivy", -- Optional: Du kannst ein Thema wählen
-		  hijack_netrw = true, -- Optional: Verhindert, dass netrw geöffnet wird, wenn du `:Explore` ausführst
+		  hijack_netrw = true,
 		}
-	  },
+	},
 }
+
+require('telescope').load_extension('fzf')
 
 vim.keymap.set("n", "<leader>fo", function ()
   require('telescope').extensions.file_browser.file_browser({
@@ -79,7 +87,7 @@ vim.keymap.set("n", "<leader>fo", function ()
     cwd = vim.fn.expand("%:p:h"),
     respect_gitignore = false,
     hidden = true,
-    grouped = true, 
+    grouped = true,
     initial_mode = "normal",
     -- layout_config = { height = 40 }
   })

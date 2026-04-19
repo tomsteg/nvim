@@ -127,9 +127,10 @@
 
 | Modus | Kürzel | Aktion |
 |-------|--------|--------|
-| `n` | `ga` | Änderung akzeptieren |
-| `n` | `gr` | Änderung ablehnen |
-| `n` | `q` | Anfrage stoppen |
+| `n` | `g2` | Änderung akzeptieren |
+| `n` | `g3` | Änderung ablehnen |
+| `n` | `g1` | Änderung immer akzeptieren (für diesen Buffer) |
+| `n` | `gv` | Diff ansehen |
 
 ---
 
@@ -169,6 +170,7 @@
 | `n` | `<Leader>zb` | Backlinks für aktuelle Notiz |
 | `n` | `<Leader>zI` | Bild einfügen |
 | `i` | `[[` | Wiki-Link einfügen |
+| `n` | `<CR>` | Smart Action: Listenpunkt → Aufgabe → erledigt (obsidian.nvim) |
 
 ---
 
@@ -201,15 +203,6 @@
 |-------|--------|--------|
 | `n` | `<Leader>dF` | Aktuelle Datei löschen (mit Bestätigung) |
 | `n` | `<Leader>p` | Datei formatieren (prettier) |
-
----
-
-## Markdown — Aufgaben (Checkboxen)
-
-| Modus | Kürzel | Aktion |
-|-------|--------|--------|
-| `n` | `<Leader>x` | Aufgabe `- [ ]` / `- [x]` umschalten |
-| `n` | `<Leader>mt` | Listenpunkt `- ` ↔ Aufgabe `- [ ]` umwandeln |
 
 ---
 
@@ -253,6 +246,5 @@ Datum wird ans Ende der aktuellen Zeile angehängt bzw. aktualisiert falls berei
 | `<Leader>l_` | LSP (Referenzen, Symbole, Diagnosen) |
 | `<Leader>t` | Terminal öffnen |
 | `<Leader>t_` | Umschalten (Blame, gelöschte Zeilen) |
-| `<Leader>x` | Markdown: Aufgabe umschalten |
 | `<Leader>d_` | Markdown: Aufgabendaten (📅 Fälligkeit, ⏰ Erinnerung) |
 | `<Leader>z_` | Obsidian.nvim (Zettelkasten) |

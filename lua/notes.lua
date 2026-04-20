@@ -15,30 +15,23 @@ local function get_random_affirmation()
   return items[math.random(#items)]
 end
 
-vim.api.nvim_create_autocmd("BufReadPost", {
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
   pattern = "*/daily/*.md",
   callback = function(ev)
     local buf = ev.buf
-    local filepath = vim.api.nvim_buf_get_name(buf)
-    -- Nur bei frisch erstellten Dateien (jünger als 5 Sekunden)
-    local stat = vim.uv.fs_stat(filepath)
-    if not stat then return end
-    if os.time() - stat.mtime.sec > 5 then return end
-    local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
-    -- Ende des Frontmatters finden
-    local fm_end = 0
-    if lines[1] == "---" then
-      for i = 2, #lines do
-        if lines[i] == "---" then fm_end = i; break end
+    vim.defer_fn(function()
+      if not vim.api.nvim_buf_is_valid(buf) then return end
+      local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
+      -- {{affirmation}}-Platzhalter im Buffer suchen und ersetzen
+      for i, line in ipairs(lines) do
+        if line:match("{{affirmation}}") then
+          local aff = get_random_affirmation()
+          if aff then
+            vim.api.nvim_buf_set_lines(buf, i - 1, i, false, { "> " .. aff })
+          end
+          return
+        end
       end
-    end
-    -- Nichts tun, wenn bereits ein Blockquote vorhanden
-    for i = fm_end + 1, math.min(fm_end + 4, #lines) do
-      if lines[i] and lines[i]:match("^>") then return end
-    end
-    local aff = get_random_affirmation()
-    if aff then
-      vim.api.nvim_buf_set_lines(buf, fm_end, fm_end, false, { "> " .. aff, "" })
-    end
+    end, 300)
   end,
 })

@@ -35,11 +35,11 @@ return {
       local out = {
         date = os.date("%Y-%m-%d"),
       }
-      -- Tags explizit erhalten (obsidian.nvim verwaltet diese intern)
-      if note.tags and #note.tags > 0 then
-        out.tags = note.tags
-      elseif note.path and tostring(note.path):find("/daily/") then
+      -- Daily Notes immer mit "daily" taggen, unabhängig von obsidian.nvim-internen Tags
+      if note.path and tostring(note.path):find("/daily/") then
         out.tags = { "daily" }
+      elseif note.tags and #note.tags > 0 then
+        out.tags = note.tags
       end
       -- Custom-Felder (alle übrigen Frontmatter-Felder) — vorhandenes date überschreibt nicht
       if note.metadata ~= nil then

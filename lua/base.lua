@@ -1,4 +1,5 @@
 
+vim.opt.termguicolors = true
 vim.opt.backspace = { 'start', 'eol', 'indent' } -- specifies what <BS>, CTRL-W, etc. can do in Insert mode
 vim.opt.conceallevel = 1
 vim.opt.encoding = 'utf-8'
@@ -41,11 +42,4 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
--- transparent background
-vim.cmd([[
-  highlight Normal guibg=NONE ctermbg=NONE
-  highlight NormalNC guibg=NONE ctermbg=NONE
-  highlight SignColumn guibg=NONE ctermbg=NONE
-  highlight LineNr guibg=NONE ctermbg=NONE
-]])
 

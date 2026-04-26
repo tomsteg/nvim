@@ -1,22 +1,5 @@
 return {
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-      local function get_flavour()
-        local result = vim.trim(vim.fn.system("osascript -e 'tell app \"System Events\" to get dark mode of appearance preferences'"))
-        return result == "true" and "mocha" or "latte"
-      end
-      local flavour = get_flavour()
-      vim.o.background = flavour == "latte" and "light" or "dark"
-      require("catppuccin").setup({
-        flavour = flavour,
-      })
-      vim.cmd("colorscheme catppuccin-" .. flavour)
-    end,
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
   },

@@ -48,3 +48,7 @@ vim.api.nvim_set_hl(0, "NormalNC",    { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "SignColumn",  { bg = "none" })
 
+-- Zeilennummern
+vim.api.nvim_set_hl(0, "LineNr",       { fg = "#888888" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffcc00", bold = true })
+

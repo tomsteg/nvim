@@ -12,7 +12,6 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.keymap.set("n", "<C-Space>", "<cmd>WhichKey \\<leader><cr>", opts)
 vim.keymap.set("n", "<C-i>", "<C-i>", opts)
 
 vim.keymap.set('', '<', '[', opts)

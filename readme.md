@@ -8,7 +8,6 @@
 
 | Modus | Kürzel | Aktion |
 |-------|--------|--------|
-| `n` | `<C-Space>` | WhichKey Leader-Menü öffnen |
 | `n` | `<C-i>` | Vorwärts springen |
 | alle | `<` | Gemappt auf `[` |
 | alle | `>` | Gemappt auf `]` |
